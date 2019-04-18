@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<!-- 兼容设备大小，不缩放 -->
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximun-scale=1">
+		<!-- Edge模式通知 Windows Internet Explorer 以最高级别的可用模式显示内容 -->
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>响应式布局练习</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			.container{
+				width: 90%;
+				margin: 0 auto;
+			}
+			
+			.row{
+				display: flex;
+				flex-wrap: wrap;
+			}
+			
+			[class*='col-']{
+				flex:1;
+				border: .2rem solid #EEE;
+				box-sizing: border-box;
+				background: turquoise;
+				height: 13rem;
+			}
+			
+			/* 手机 */
+			@media only screen and (min-width : 320px) {
+				.col-xs-12{
+					flex: 0 0 100%;
+				}
+			}
+			
+			/* 平板 */
+			@media only screen and (min-width : 768px) {
+				.col-md-6{
+					flex: 0 0 50%;
+				}
+			}
+			
+			/* 中等屏幕 */
+			@media only screen and (min-width : 992px) {
+				.col-lg-4{
+					flex: 0 0 33.33%;
+				}
+			}
+			
+			/* 宽屏设备 */
+			@media only screen and (min-width : 1200px) {
+				.col-xl-3{
+					flex: 0 0 25%;
+				}
+			}
+			
+			/* 本例样式 */
+			.card{
+				height: 10rem;
+				text-align: center;
+				padding: .5rem;
+			}
+			
+			.picture{
+				width: 100px;
+				height: 100px;
+				border-radius: 100%;
+				birder-radius: .5rem
+			}
+			
+			.title{
+				line-height: 1.5rem;
+				margin-top: .5rem;
+				margin-bottom: .5rem;
+				color: green
+			}
+			
+			.title1{
+				line-height: 1.5rem;
+				margin-top: .8rem;
+				margin-bottom: .5rem;
+				color: darkblue;
+			}
+			
+			.total{
+				margin-left: 25%;
+				margin-right: 25%;
+			}
+			
+			td{
+				width:60px;
+				height:60px;
+				border-radius:10px;
+			}
+			
+			.img-circle{
+				border-radius:10px;
+				width:100%;
+				height:100%;
+			}
+			
+			.row1{
+				display: flex;
+				margin-left: 10%;
+				margin-right: 10%;
+			}
+			
+			.box{
+				width:60px;
+				height:60px;
+				padding:10px 10px 10px 10px;
+				border-radius:10px;				
+			}
+			
+			.row2{
+				width: 90%;
+				margin:0 auto;
+				display: grid;
+				grid-template-columns:90px 90px ;
+				grid-template-rows:90px 90px;
+				grid-column-gap:15px;
+				grid-row-gap:15px;
+			}
+			
+			.box123{
+				padding:10px 10px 10px 10px;
+				border-radius:10px;
+			}
+			
+			.box1{
+				grid-column-start:1;
+				grid-column-end:3;
+			}
+			
+			.title2{
+				line-height: 1.5rem;
+				margin-top: 5rem;
+				margin-bottom: .5rem;
+				color: green;
+			}
+				
+		
+		
+		</style>						
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-6 col-lg-4 col-xl-3">
+					<div class="card">
+						<div class="title">
+							<h1>下面是历代网页布局</h1>
+							<p class="title1">下面为大家展示一下部分内容</p>						
+						</div>		
+						<img src="img/好友头像2.jpg"  class="picture"/>
+					</div>					
+				</div>
+				<div class="col-xs-12 col-md-6 col-lg-4 col-xl-3">
+					<div class="card">
+						<div class="title">
+							<h1>表格布局</h1>					
+						</div>
+						<div class="total">
+							<table border="0" cellspacing="10" cellpadding="10">
+								<tr>
+									<td><img src="img/好友头像9.jpg" class="img-circle"></td>
+									<td><img src="img/好友头像7.jpg" class="img-circle"></td>
+								</tr>
+								<tr>
+									<td><img src="img/好友头像10.jpg" class="img-circle"></td>
+									<td><img src="img/好友头像8.jpg" class="img-circle"></td>
+								</tr>
+							</table>
+						</div>												
+					</div>
+				</div>
+				<div class="col-xs-12 col-md-6 col-lg-4 col-xl-3">
+					<div class="card">
+						<div class="title">
+							<h1>flex布局</h1>
+						</div>
+						<div class="row1">
+							<div class="box">
+								<img src="img/好友头像3.jpg" class="img-circle">
+							</div>
+							<div class="box">
+								<img src="img/好友头像4.jpg" class="img-circle">
+							</div>
+							<div class="box">
+								<img src="img/好友头像1.jpg" class="img-circle">
+							</div>
+						</div>
+						<div class="row1">
+							<div class="box">
+								<img src="img/好友头像5.jpg"  class="img-circle">
+							</div>
+							<div class="box">
+								<img src="img/好友头像6.jpg"  class="img-circle">
+							</div>
+							<div class="box">
+								<img src="img/好友头像2.jpg" class="img-circle">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-md-6 col-lg-4 col-xl-3">
+					<div class="card">
+						<div class="title2">
+							<h1>谢谢观赏！</h1>							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

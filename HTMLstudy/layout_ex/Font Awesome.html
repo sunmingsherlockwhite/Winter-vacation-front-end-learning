@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>font-awesome样例</title>
+        <!-- 引入font-awesome图标样式 -->
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+		<style type="text/css">
+			.btn {
+				width: 90px;
+				height: 40px;
+				border: none;
+				border-radius: 5px;
+				font-size: 13px;
+			}
+
+			.btn-default {
+				background: rgb(236, 236, 236);
+				color: rgb(51, 51, 51);
+			}
+
+			.btn-comment {
+				background: rgb(215, 188, 98);
+				color: #3F3F3F;
+			}
+
+			.btn-danger {
+				background: rgb(214, 73, 63);
+				color: #FFFFFF;
+			}
+
+			.btn-success {
+				background: rgb(74, 152, 105);
+				color: #FFFFFF;
+			}
+
+			.btn-primary {
+				background: rgb(51, 152, 205);
+				color: #FFFFFF;
+			}
+
+			i {
+				margin-right: 5px;
+			}
+
+			.my-heart {
+				color: rgb(214, 73, 63);
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<p><i class="icon-spinner icon-spin"></i> loading content...</p>
+			<p>
+				<!-- 正常尺寸图标 -->
+				<i class="icon-camera-retro"></i> icon-camera-retro
+				<!-- 大尺寸图标 -->
+				<i class="icon-camera-retro icon-large"></i> icon-camera-retro
+				<!-- 两倍大小图标 -->
+				<i class="icon-camera-retro icon-2x"></i> icon-camera-retro
+			</p>
+			<!-- 自定义按钮样式，按钮风格，以更好地复用CSS代码，并引用合适的图标 -->
+			<button type="button" class="btn btn-comment"> <i class="icon-comment"></i>Comment</button>
+			<button type="button" class="btn btn-danger"> <i class="icon-trash"></i>Delete</button>
+			<button type="button" class="btn btn-default"> <i class="icon-cog"></i>Settings</button>
+			<button type="button" class="btn btn-primary"> <i class="icon-signin icon-large"></i>Signin</button>
+			<button type="button" class="btn btn-success"> <i class="icon-cog"></i>Settings</button>
+			<!-- 只有唯一对元素设置样式，可以使用style行内样式 -->
+			<p><i class="icon-bell icon-large" style="color: #DDD;"></i></p>
+			<p>
+				<!-- 引用图标并使用自定义样式改变图标大小、颜色 -->
+				<i class="icon-heart my-heart"></i>
+				<i class="icon-heart icon-2x my-heart"></i>
+			</p>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>flex实现圣杯布局</title>
+		<style type="text/css">
+			*{
+				/* 伸缩项目自动box-sizing：border-box，所以需调整为content-box */
+				box-sizing:content-box;
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				display:flex;
+				/* 头、中部、脚纵向显示 */
+				flex-direction: column;
+			}
+			
+			header,footer{
+				/* 不放大、不缩小、尺寸固定 */
+				flex:0 0 50px;
+				background: darkslateblue;
+				color: black
+			}
+			
+			.main{
+				width:80%;
+				margin: 0 auto;
+				display: flex;
+				/* flex：1 1 auto：中部区域自由伸缩，可以简写成flex：1 */
+				flex: 1 1 auto;
+			}
+			
+			.left{
+				height: 600px;
+				background: aquamarine;
+				/* 不放大、不缩小、固定宽200 */
+				flex: 0 0 200px;
+				/* 让left居于左侧 */
+				order: -1;
+			}
+			
+			.content{
+				background: darkseagreen;
+				height:1000px;
+				flex: 1 1 auto;
+			}
+			
+			.right{
+				flex:0 0 200px;
+				height: 800px;
+				/* background: skyblue; */
+				display: flex;
+				flex-direction: column;
+			}
+			
+			.item{
+				width: 300px;
+				height: 300px;
+				padding: 5px 5px 5px 5px;
+				margin-bottom: 10px;
+				border-bottom: 1px solid #EEE;
+				text-align: center;
+			}
+			
+			.item img{
+				width: 100%;
+				height: 90%;				
+			}
+			
+			.item span{
+				font-size: 12px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<header></header>
+		<div class="main">
+			<div class="left"></div>
+			<div class="content"></div>
+			<div class="right">
+				<div class="item">
+					<img src="img/1.jpg">
+					<span>头像1</span>
+				</div>
+				<div class="item">
+					<img src="img/2.jpg">
+					<span>头像2</span>
+				</div>
+				<div class="item">
+					<img src="img/3.jpg">
+					<span>头像3</span>
+				</div>
+				<div class="item">
+					<img src="img/4.jpg">
+					<span>头像4</span>
+				</div>
+			</div>
+		</div>
+		<footer></footer>
+	</body>
+</html>

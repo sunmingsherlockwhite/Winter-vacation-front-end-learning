@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+		<title>卡片翻转效果</title>
+		<style>
+			body{
+				text-align: center;
+			}
+			
+			#card{
+				width: 300px;
+				height:300px;
+				perspective: 500;
+				/* 设置元素被查看位置的视图 */
+				-webkit-perspective: 500;
+				/* Safari和Chrome */
+				box-shadow: 2px 5px 10px #aaa;
+				/* 阴影 */
+			}
+			
+			#card div{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				-webkit-perspective: 10000;
+				backface-visibility: hidden;
+				/* 隐藏 */
+				-webkit-transition: all 1s;
+				-moz-transition: all 1s;
+				-ms-transition: all 1s;
+				-moz-transition: all 1s;
+			}
+			
+			#card .font{
+				background: #fff;
+				display: flex;
+				flex-direction: column;
+			}
+			
+			#card .back{
+				background: #ADD8E6;
+				-webkit-transform: rotateY(-180deg);
+				/* 背面卡片先沿Y轴翻转180，反过来 */
+			}
+			
+			#card:hover .front{
+				-webkit-transform: rotateY(-180deg);
+				/* 鼠标进入时正面卡片翻转180 */
+			}
+			
+			#card:hover .back{
+				-webkit-transform: rotateY(-360deg);
+				/* 鼠标进入时正面卡片翻转360度 */
+			}
+			
+			.card-head{
+				max-height: 110px;
+				background: linear-gradient(40deg , #7873F5 , #7FFFD4);
+			}
+			
+			.img-round{
+				width: 80px;
+				height: 80px;
+				border-radius: 50%;
+				position: relative;
+				top:65px;
+				border: 5px solid #ADD8E6;
+			}
+			
+			.card-body{
+				margin-top: 150px;
+			}
+			
+			.card-title{
+				color: #7873F5;
+			}
+			
+			.card-title1{
+				margin-top: 80px;
+				color: #7873F5;
+				font-size: 30px;
+			}
+			
+			.card-content{
+				color: #7FFFD4;
+				font-size: 14px;
+				line-height: 10px;
+			}
+			
+			.btn{
+				position: relative;
+				top: 20px;
+				width: 110px;
+				height: 40px;
+				background: #7FFFD4;
+				color: cadetblue;
+				border: none;
+				border-radius: 5px;
+				font-size: 13px;
+				box-shadow: 2px 5px 10px aaa;
+			}
+			
+			.btn-primary {
+				background: rgb(51, 152, 205);
+				color: #FFFFFF;
+			}
+			
+			.like{
+				margin-left: 4px
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id="card">
+			<div class="front">
+				<div class="card-head"></div>
+				<div class="avatar">
+					<img src="img/我的头像.png" / class="img-round">
+				</div>
+				<div class="card-body">
+					<h4 class="card-title">CSS3实现卡片翻转效果</h4>
+					<p class="card-content">
+						鼠标进入卡片即可翻转，离开还原
+					</p>
+				</div>
+			</div>
+			<div class="back">
+				<h4 class="card-title1">实现方式</h4>
+				<p class="card-content">
+					巴拉巴拉
+				</p>
+				<button type="button" class="btn btn-primary"><i class="icon-github-alt icon-large"></i> <span class="like">喜欢</span></button>
+			</div>
+		</div>
+	</body>
+</html>

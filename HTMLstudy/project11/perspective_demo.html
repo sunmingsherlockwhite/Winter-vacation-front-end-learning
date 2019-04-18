@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+		<title>perspective配合transform实现的一些效果</title>
+		<style>
+			
+			.main{
+				display: flex;
+			}
+			
+			#div1{
+				position: relative;
+				height: 150px;
+				width: 150px;
+				margin: 50px;
+				padding: 10px;
+				border: 1px solid #eee;
+				box-shadow: 2px 5px 10px #aaa;
+				perspective:150;
+				/* perspective属性定义3D元素距视图的距离，以像素计当为元素定义 perspective属性时，其子元素会获得透视效果，而不是元素本身 */
+				-webkit-perspective: 150;
+				/* Safari and Chrome */
+			}
+			
+			#div2{
+				padding: 0px;
+				position: absolute;
+				box-shadow: 2px 5px 10px aquamarine;
+				background-color: aqua;
+				transform: rotateX(45deg);
+				/* 沿X轴翻转45度 */
+				-webkit-transform: rotateX(45deg);
+				/* Safari and Chrome */
+			}
+			
+			.picture{
+				width: 100%;
+				height:100%;
+			}
+			
+			#div3{
+				position: relative;
+				height: 150px;
+				width: 150px;
+				margin: 50px;
+				padding: 10px;
+				border: 1px solid #eee;
+				box-shadow: 2px 5px 10px #aaa;
+				perspective:150;
+				/* perspective属性定义3D元素距视图的距离，以像素计当为元素定义 perspective属性时，其子元素会获得透视效果，而不是元素本身 */
+				-webkit-perspective: 150;
+				/* Safari and Chrome */
+			}
+			
+			#div4{
+				padding: 0px;
+				position: absolute;
+				box-shadow: 2px 5px 10px #7873F5;
+				background-color: lightblue;
+				transform: rotateZ(100deg);
+				/* 沿Z轴翻转45度 */
+				-webkit-transform: rotateZ(120deg);
+				/* Safari and Chrome */
+			}
+			
+			#div5{
+				position: relative;
+				height: 150px;
+				width: 150px;
+				margin: 50px;
+				padding: 10px;
+				border: 1px solid #eee;
+				box-shadow: 2px 5px 10px  aliceblue;
+				perspective:;
+				/* perspective属性定义3D元素距视图的距离，以像素计当为元素定义 perspective属性时，其子元素会获得透视效果，而不是元素本身 */
+				-webkit-perspective: 150;
+				/* Safari and Chrome */
+			}
+			
+			#div6{
+				padding: 0px;
+				position: absolute;
+				box-shadow: 2px 5px 10px  chartreuse;
+				background-color:  #7873F5;
+				transform: rotateY(45deg);
+				/* 沿Y轴翻转45度 */
+				-webkit-transform: rotateY(75deg);
+				/* Safari and Chrome */
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<div id="div1">
+				<img src="img/好友头像9.jpg" class="picture" />
+				<div id="div2">
+					<img src="img/好友头像10.jpg"  class="picture"/>
+				</div>
+			</div>
+			<div id="div3">
+				<img src="img/好友头像7.jpg" class="picture" />
+				<div id="div4">
+					<img src="img/好友头像8.jpg"  class="picture"/>
+				</div>
+			</div>
+			<div id="div5">
+				<div id="div6">
+					<img src="img/好友头像3.jpg"  class="picture"/>
+				</div>
+				<img src="img/好友头像4.jpg" class="picture" />
+			</div>
+		</div>
+	</body>
+</html>

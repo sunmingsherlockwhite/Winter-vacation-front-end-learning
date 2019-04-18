@@ -1,0 +1,663 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+}
+
+a {
+	color: #444;
+	text-decoration: none;
+}
+
+.header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 85px;
+	display: flex;
+	justify-content: space-between;
+	background-color: #EDEDED;
+	color: #444;
+	align-items: center;
+}
+
+.header1 {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 85px;
+	display: flex;
+	justify-content: space-between;
+	color: #444;
+	align-items: center;
+}
+
+.right{
+	margin-top: 35px;
+}
+
+.right4{
+	margin-top: 35px;
+}
+
+.right3{
+	margin-top: 35px;
+}
+
+.btn1{
+	border: none;
+	border-radius: 5px;
+	color:black;
+	background: white;
+}
+
+.btn {
+	width: 50px;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+	color:black;
+	background: #EDEDED;
+}
+
+.btn2{
+	position: relative;
+	top: 0px;
+	border: none;
+	border-radius: 5px;
+	color:black;
+	background: white;
+}
+
+.btn3{
+	width: 0px;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+	color:black;
+	background: white;
+}
+
+.btn3-1{
+	width: 0px;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+	color:skyblue;
+	background: white;
+}
+
+.btn4 {
+	width: 50px;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+	color:black;
+	background: white;
+}
+
+.btn-down{
+	margin-top: 38px;
+}
+
+
+.btn-people{
+	padding-left: 5px;
+}
+
+.header-item {
+	margin-top: 35px;
+	padding-left: 10px;
+	font-weight: 700;
+}
+
+.header-item1 {
+	margin-top: 35px;
+	font-weight: 700;
+}
+
+.header-item2 {
+	margin-left: 20px;
+	font-weight: 700;
+}
+
+.container {
+	margin-top: 85px;
+	margin-bottom: 85px;
+}
+
+.container1 {
+	margin-top: 85px;
+	background: #D3D3D3;
+}
+
+
+.tab-bar {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 55px;
+	background-color: #F7F7F7;
+	color: #444;
+}
+.logo img{
+	margin-top: 5px;
+	width: 27px;
+	height: 25px;
+}
+
+.tab-bar ul {
+	display: flex;
+}
+
+.tab-bar ul li {
+	display: flex;
+	flex-direction: column;
+	list-style: none;
+	flex: 0 0 25%;
+	text-align: center;
+}
+
+.current {
+	color: #07BF62;
+}
+
+.say{
+	display: flex;
+	margin-top: 10px;
+}
+
+.say-top{
+	display: flex;
+	background: #EDEDED;
+}
+
+.heads img{
+	width: 60px;
+	height: 60px;
+	border-radius: 10%;
+	margin-left: 10px;
+}
+
+.message{
+	margin-left: 10px;
+	display: flex;
+	flex-direction: column;
+}
+
+.leftright1{
+	width: 285px;
+	display: flex;
+	/* 子元素垂直方向居中对齐 */
+	align-items: center;
+	/* 子元素水平方向两端对齐(一左一右)*/
+	justify-content: space-between;
+}
+
+.left1{
+	font-size: 18px;
+	font-weight: 600;
+	/* 主轴正向flex */
+	display: flex;
+	flex-direction: row;
+}
+
+.right1{
+	display: flex;
+	flex-direction: row-reverse;
+	/*  right盒子的右侧内边距 */
+	padding-right: 15px;
+	font-size: 12px;
+	color: lightgray;
+}
+
+.leftright2{
+	width: 285px;
+	display: flex;
+	/* 子元素垂直方向居中对齐 */
+	align-items: center;
+	/* 子元素水平方向两端对齐(一左一右)*/
+	justify-content: space-between;
+}
+
+.left2{
+	font-size: 13px;
+	/* 主轴正向flex */
+	display: flex;
+	flex-direction: row;
+	color: lightgray;
+}
+
+.right2{
+	display: flex;
+	flex-direction: row-reverse;
+	/*  right盒子的右侧内边距 */
+	padding-right: 15px;
+}
+
+.hr{
+	margin-top: 15px;
+}
+
+.left{
+	display: flex;
+}
+
+.menu{
+	position: fixed;
+	padding-top: 10px;
+	padding-left: 340px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.w{
+	margin-right: 3px;
+}
+
+.row{
+	display: flex;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+.smallhead img{
+	width: 40px;
+	height: 40px;
+}
+
+.title{
+	margin-top: 5px;
+	margin-left: 10px;
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.hr1{
+	width: 300px;
+	margin-top: 10px;
+}
+
+.row1{
+	background: #EDEDED;
+	height: 30px;
+}
+
+.zimu{
+	margin-left: 10px;
+	padding-top: 5px;
+}
+
+.card{
+	display: flex;
+	background: white;
+}
+
+.card1{
+	display: flex;
+	margin-top: 10px;
+	background: white;
+	display: flex;
+	flex-direction: column;
+}
+
+.bighead img{
+	width: 80px;
+	height: 80px;
+	margin-left: 10px;
+}
+
+.information{
+	display: flex;
+	flex-direction: column;
+	margin-left: 10px;
+	margin-bottom: 30px;
+}
+
+.name{
+	display: flex;
+}
+
+.name1{
+	font-weight: 700;
+}
+
+.hr2{
+}
+
+.othername{
+	background: white;
+}
+
+.head1{
+	top: 0;
+	width: 100%;
+	height: 50px;
+	display: flex;
+	justify-content: space-between;
+	color: #444;
+	align-items: center;
+}
+
+.head2{
+	margin-top: 10px;
+	top: 0;
+	width: 100%;
+	height: 70px;
+	display: flex;
+	justify-content: space-between;
+	color: #444;
+	background: white;
+	align-items: center;
+}
+.head3{
+	top: 0;
+	width: 100%;
+	height: 50px;
+	display: flex;
+	justify-content: space-between;
+	color: #444;
+	background: white;
+	align-items: center;
+}
+
+.left4{
+	margin-left: 10px;
+}
+
+.right4{
+	position: relative;
+	top: -35px;
+}
+
+.left5{
+	margin-left: 10px;
+}
+
+.right5{
+	position: relative;
+	top: -15px;
+}
+
+.left6{
+	margin-left: 10px;
+}
+
+.right6{
+	margin-top: 10px;
+}
+
+.talk{
+	display: flex;
+	align-items: center;
+	text-align: center;
+	color: skyblue;
+}
+
+.btn5{
+	height: 60px;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+	color:black;
+	background: white;
+}
+
+.btn-me{
+	padding-left: 140px;
+	color: skyblue;
+}
+
+.hang{
+	background: white;
+}
+
+.left6{
+	display: flex;
+	margin-left: 15px;
+}
+
+.mircle{
+	padding-left: 15px;
+}
+
+.hr4{
+	margin-left: 60px;
+}
+
+.hang1{
+	width: 10px;
+	height:10px;
+	background: lightgray;
+}
+
+.btn6{
+	height: 60px;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+	color:black;
+	background: white;
+}
+
+.container2{
+	
+}
+
+.bizhi img{
+	width: 100%;
+	height: 320px;
+}
+
+.myhead{
+	float: right;
+	display: flex;
+}
+
+.myhead img{
+	width: 100px;
+	height: 100px;
+	position: relative;
+	top: -50px;
+	border-radius: 10%;
+}
+
+.myname{
+	position: relative;
+	top: -16px;
+	margin-right: 10px;
+}
+
+.shuoshuo{
+	margin-top: 50px;
+	display: flex;
+	margin-left: 5px;
+}
+
+.head4 img{
+	width: 80px;
+	height: 80px;
+}
+
+.passage{
+	display: flex;
+	flex-direction: column;
+	margin-left: 5px;
+}
+
+.minjie{
+	margin-top:7px;
+	font-weight: 700;
+	color: #87CEEB;
+}
+
+.passage img{
+	width: 200px;
+	height: 200px;
+	border-radius: 10%;
+}
+
+.time1{
+	margin-top: 10px;
+	font-size: 15px;
+	color: #D3D3D3;
+}
+
+.btn-camera{
+	float: right;
+}
+
+.btn6{
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+	color:black;
+	position: relative;
+	top: -50px;
+}
+
+.mycard{
+	display: flex;
+	margin-top: 100px;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+
+.myhead1 img{
+	width: 80px;
+	height: 80px;
+	border-radius: 10%;
+}
+
+.passage1{
+	margin-left: 10px;
+}
+
+.name2{
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.weixinhao{
+	font-size: 15px;
+}
+
+.leftright3{
+	display: flex;
+	/* 子元素垂直方向居中对齐 */
+	align-items: center;
+	/* 子元素水平方向两端对齐(一左一右)*/
+	justify-content: space-between;
+}
+
+.left7{
+	/* 主轴正向flex */
+	display: flex;
+	flex-direction: row;
+}
+
+.right7{
+	display: flex;
+	/* 主轴反向flex(本例为头像自右向左排序) */
+	flex-direction: row-reverse;
+	/*  right盒子的右侧内边距 */
+	margin-left: 110px;
+}
+
+.hang2{
+	width:  100%;
+	height: 10px;
+	background: lightgray;
+}
+
+.leftright4{
+	display: flex;
+	/* 子元素垂直方向居中对齐 */
+	align-items: center;
+	/* 子元素水平方向两端对齐(一左一右)*/
+	justify-content: space-between;
+}
+
+.left8{
+	/* 主轴正向flex */
+	display: flex;
+	flex-direction: row;
+}
+
+.container3{
+	margin-top: 85px;
+}
+
+.green{
+	background: lightgreen;
+	width: 340px;
+	height: 150px;
+	border-radius: 5%;
+	margin-left: 10px;
+	margin-right: 10px;
+	display: flex;
+}
+
+.shoufukuan{
+	align-items: center;
+	text-align: center;
+	margin-left: 50px;
+	margin-top: 25px;
+	width: 90px;
+}
+
+
+.shoufukuan1{
+	font-size: 40px;
+}
+
+.shoufukuan2{
+	font-size: 20px;
+}
+
+.title1{
+	margin-left: 10px;
+}
+
+.kuai{
+	width:90%
+	margin:0 auto;
+}
+
+.row10{
+	display: flex;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+
+.box{
+	width:100px;
+	height:100px;
+	padding:10px 10px 10px 10px;
+	border: 1px solid #EEEEEE;
+	text-align: center;
+}
+
+.box1{
+	width:100px;
+	height:100px;
+	padding:10px 10px 10px 10px;
+}
+
+
+.img-circle{
+	border-radius:10px;
+	margin-top: 10px;
+}
+
+
+.word1{
+	margin-top: 10px;
+}
+			

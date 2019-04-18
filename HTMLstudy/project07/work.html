@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>浮动和定位实例</title>
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			/* 整体采取圣杯布局，纵向 */
+			body{
+				display: flex;
+				flex-direction: column;
+			}
+			
+			/* 顶部定高，且固高，自身采用flex横向布局 */
+			header{
+				position: fixed;
+				width: 100%;
+				height: 60px;
+				background: #008B8B;
+				color: #FFF;
+				display: flex;
+				/* 子元素垂直方向居中对齐 */
+				align-items: center;
+				/* 子元素水平方向两端对齐(一左一右)*/
+				justify-content: space-between;
+			}
+			
+			.left{
+				/* 主轴正向flex */
+				display: flex;
+				flex-direction: row;
+				/* left盒子的左侧内边距 */
+				padding-left: 30px;
+			}
+			
+			li{
+				/* 去掉圆点 */
+				list-style: none;
+			}
+			
+			.left li{
+				/* 每个li元素之间的右边距*/
+				margin-right: 10px;
+			}
+			
+			.right li{
+				/* 每个li元素之间的右边距*/
+				margin-left: 10px;
+			}
+			
+			.right{
+				display: flex;
+				/* 主轴反向flex(本例为头像自右向左排序) */
+				flex-direction: row-reverse;
+				/*  right盒子的右侧内边距 */
+				padding-right: 20px;
+			}
+			
+			.right li img{
+				width: 40px;
+				height: 40px;
+				border-radius: 100%;
+			}
+			
+			.container{
+				width: 80%;
+				margin-top: 70px;
+				margin-left: 10%;
+				margin-right: 10%;
+			}
+			
+			/* 左浮动，用border-box包裹边框 */
+			.sidebar{
+				width: 30%;
+				height: 650px;
+				background: #EEE;
+				float: left;
+				border: 5px solid #55D4EB;
+				box-sizing: border-box;
+			}
+			
+			/* 右浮动，用border-box包裹边框 */
+			.content{
+				width: 70%;
+				height: 650px;
+				background: #EEE;
+				float: right;
+				border: 5px solid #55D4EB;
+				box-sizing: border-box;
+			}
+			
+			.row{
+				width: 95%;
+				margin: 0 auto;			
+			}
+			
+			.menu{
+				display: flex;
+				margin-left: 10px;
+				margin-top: 20px;
+				margin-bottom: 10px;
+			}
+			
+			.box{
+				margin-right: 20px;
+			}
+			
+			.box1{
+				color: #008888;
+			}
+			
+			.hr12{
+				display: flex;
+			}
+			
+			.hr1{
+				width: 115px;
+				border:none;
+				border-top:2px ridge green;
+			}
+			
+			.hr2{
+				width: 100%;
+			}
+			
+			.left1{
+				/* 主轴正向flex */
+				display: flex;
+				flex-direction: row;
+				/* left盒子的左侧内边距 */
+			}
+			
+			.card{
+				display: flex;
+				/* 子元素水平方向两端对齐(一左一右)*/
+				justify-content: space-between;
+			}
+			
+			.row1{
+				margin-top: 20px;
+			}
+			
+			.head img{
+				width: 80px;
+				height: 80px;				
+				border-radius: 100%;
+			}
+			
+			.message{
+				margin-left: 20px;
+			}
+			
+			.friend{
+				font-weight: 600;
+				margin-right: 10px;
+			}
+			
+			.name{
+				margin-bottom: 10px;
+			}
+			
+			.adress{
+				display: flex;
+				margin-bottom: 10px;
+			}
+			
+			.adress1{
+				margin-left: 10px;
+			}
+			
+			.icons{
+				display: flex;
+				margin-bottom: 20px;
+			}
+			
+			.icon img{
+				width: 20px;
+				height: 20px;
+				margin-right: 15px;
+				border-radius: 100%;
+			}
+			
+			.right1{
+				display: flex;
+				/* 主轴反向flex(本例为头像自右向左排序) */
+				flex-direction: row-reverse;
+				/*  right盒子的右侧内边距 */
+				margin-top: 20px;
+			}
+				
+			footer {
+				height: 120px;
+				background: #008888;
+				/* 清除浮动 */
+				clear: both;
+				display: flex;
+				/* 水平居中 */
+				justify-content: center;
+				/* 垂直居中 */
+				align-items: center;
+				color: #FFF;
+			}
+			
+			.btn {
+				width: 100px;
+				height: 40px;
+				border: none;
+				border-radius: 5px;
+				font-size: 13px;
+			}
+			
+			.btn1{
+				width: 80px;
+				height: 40px;
+				border: 2px solid gray;
+				border-radius: 5px;
+				font-size: 13px;
+			}
+			
+			.btn-success {
+				background: rgb(74, 152, 105);
+				color: #FFFFFF;
+			}
+			
+			.btn-success1{
+				background: white;
+				color: black;
+			}
+			
+			.iconindex{
+				margin-left: 5px;
+			}
+			
+			.btn-up{
+				width: 50px;
+				height: 50px;
+				background: #FFF;
+				border: 1px solid #DDD;
+				border-radius: 2px;
+				color: #3F3F3F;
+				position: fixed;
+				bottom: 30px;
+				right: 15px;
+			}
+			
+			.row2{
+				display: flex;				
+			}
+			
+			.title{
+				display: flex;
+				width: 100%;
+				height: 100%;
+				margin:0 auto;
+				flex-direction: column;
+				flex-wrap: wrap;
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				border-radius: 5px;			
+				margin-right: 20px;
+				margin-top: 20px;
+				background: white;	
+			}
+			
+			.title1{
+				display: flex;
+				width: 100%;
+				height: 100%;
+				margin:0 auto;
+				flex-direction: column;
+				flex-wrap: wrap;
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				border-radius: 5px;	
+				margin-top: 20px;
+				background: white;	
+			}
+			
+			.leftright1{
+				display: flex;
+				/* 子元素水平方向两端对齐(一左一右)*/
+				justify-content: space-between;
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+			
+			.left2{
+				/* 主轴正向flex */
+				display: flex;
+				flex-direction: row;
+				/* left盒子的左侧内边距 */
+				padding-left: 10px;
+				padding-top: 2px;
+			}
+			
+			.left3{
+				/* 主轴正向flex */
+				display: flex;
+				flex-direction: row;
+				/* left盒子的左侧内边距 */
+				padding-left: 10px;
+			}
+			
+			.right2{
+				display: flex;
+				/* 主轴反向flex(本例为头像自右向左排序) */
+				flex-direction: row-reverse;
+				/*  right盒子的右侧内边距 */
+				padding-right: 10px;
+			}
+			
+			.time{
+				border: 1px solid #EEE;
+				background: deepskyblue;
+				width: 30px;
+				height: 25px;
+				color: white;
+				text-align: center;
+			}
+			
+			.time1{
+				border: 1px solid #EEE;
+				background: black;
+				width: 30px;
+				height: 25px;
+				color: white;
+				text-align: center;
+			}
+			
+			.time2{
+				border: 1px solid #EEE;
+				background: green;
+				width: 30px;
+				height: 25px;
+				color: white;
+				text-align: center;
+			}
+			
+			.time3{
+				border: 1px solid #EEE;
+				background: yellow;
+				width: 30px;
+				height: 25px;
+				color: white;
+				text-align: center;
+			}
+			
+			.number{
+				margin-left: 10px;
+				margin-top: 10px;
+				font-size: 25px;
+			}
+			
+			.number1{
+				margin-right: 5px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="left">
+				<li>
+					<i class="icon-home icon-large"></i>主页 
+				</li>
+				<li>
+					<i class="icon-bell icon-large"></i>消息
+				</li>
+			</div>
+			<div class="right">
+				<li>
+					<img src="img/我的头像1.png" />
+				</li>
+				<li>
+					<img src="img/我的头像2.png" />
+				</li>
+			</div>
+		</header>
+		<div class="container">
+			<div class="sidebar">
+			</div>
+			<div class="content">
+				<div class="row">
+					<div class="menu">
+						<div class="box box1">
+							<p>所有联系人</p>
+						</div>
+						<div class="box">
+							<p>联系方式</p>
+						</div>
+						<div class="box">
+							<p>联系地址</p>
+						</div>					
+					</div>
+					<div class="hr12">
+						<div class="hr1">
+							<hr />
+						</div>
+						<div class="hr2">
+							<hr />
+						</div>
+					</div>			
+					<div class="row1">
+						<div class="card">
+							<div class="left1">
+								<div class="head">
+									<img src="img/好友头像2.jpg"/>
+								</div>
+								<div class="message">
+									<div class="name">
+										<p><span class="friend">好友</span> 最近联系：1小时前</p>
+									</div>
+									<div class="adress">
+										<p><i class="icon-map-marker icon-large"></i></p>
+										<p class="adress1">江苏省泰州市海陵区青年路123</p>
+									</div>
+									<div class="icons">
+										<div class="icon">
+											<img src="img/微信.jpg" />
+										</div>
+										<div class="icon">
+											<img src="img/qq.jpg" />
+										</div>
+										<div class="icon">
+											<img src="img/新浪微博.jpg"/>
+										</div>
+									</div>
+								</div>
+							</div>					
+							<div class="right1">
+							<button type="button" class="btn btn-success"> <i class="icon-ok"></i><scan class="iconindex">已收藏</scan></button>
+							 </div>
+						</div>
+					</div>
+					<hr class="hr2">
+					<div class="row1">
+						<div class="card">
+							<div class="left1">
+								<div class="head">
+									<img src="img/好友头像4.jpg"/>
+								</div>
+								<div class="message">
+									<div class="name">
+										<p><span class="friend">好友</span> 最近联系：1小时前</p>
+									</div>
+									<div class="adress">
+										<p><i class="icon-map-marker icon-large"></i></p>
+										<p class="adress1">江苏省泰州市海陵区青年路123</p>
+									</div>
+									<div class="icons">
+										<div class="icon">
+											<img src="img/微信.jpg" />
+										</div>
+										<div class="icon">
+											<img src="img/qq.jpg" />
+										</div>
+										<div class="icon">
+											<img src="img/新浪微博.jpg"/>
+										</div>
+									</div>
+								</div>
+							</div>					
+							<div class="right1">
+							<button type="button" class="btn1 btn-success1"></i><scan class="iconindex">已收藏</scan></button>
+							</div>
+					</div>
+					<hr class="hr2">
+					<div class="row1">
+						<div class="card">
+							<div class="left1">
+								<div class="head">
+									<img src="img/好友头像7.jpg"/>
+								</div>
+								<div class="message">
+									<div class="name">
+										<p><span class="friend">好友</span> 最近联系：1小时前</p>
+									</div>
+									<div class="adress">
+										<p><i class="icon-map-marker icon-large"></i></p>
+										<p class="adress1">江苏省泰州市海陵区青年路123</p>
+									</div>
+									<div class="icons">
+										<div class="icon">
+											<img src="img/微信.jpg" />
+										</div>
+										<div class="icon">
+											<img src="img/qq.jpg" />
+										</div>
+										<div class="icon">
+											<img src="img/新浪微博.jpg"/>
+										</div>
+									</div>
+								</div>
+							</div>					
+							<div class="right1">
+							<button type="button" class="btn btn-success"> <i class="icon-ok"></i><scan class="iconindex">已收藏</scan></button>
+							 </div>
+						</div>
+						<hr />
+					</div>
+				</div>
+				<div class="row2">
+					<div class="title">
+						<div class="leftright1">
+							<div class="left2">
+								<p>访问量</p>
+							</div>						
+							<div class="right2">
+								<div class="time">
+									<p>周</p>
+								</div>
+							</div>
+						</div>
+						<hr>
+						<div class="number">
+							<p>9,999,666</p>
+						</div>
+						<div class="leftright1">
+							<div class="left3">
+								<p>总计访问量</p>
+							</div>						
+							<div class="right2">
+								<div class="total">
+									<p><i class="icon-flag"></i></p>
+								</div>
+								<div class="number1">
+									<p>88万</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="title">
+						<div class="leftright1">
+							<div class="left2">
+								<p>下载</p>
+							</div>						
+							<div class="right2">
+								<div class="time1">
+									<p>月</p>
+								</div>
+							</div>
+						</div>
+						<hr>
+						<div class="number">
+							<p>33,555</p>
+						</div>
+						<div class="leftright1">
+							<div class="left3">
+								<p>新下载</p>
+							</div>						
+							<div class="right2">
+								<div class="total">
+									<p><i class="icon-magnet"></i></p>
+								</div>
+								<div class="number1">
+									<p>10%</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="title">
+						<div class="leftright1">
+							<div class="left2">
+								<p>收入</p>
+							</div>						
+							<div class="right2">
+								<div class="time2">
+									<p>年</p>
+								</div>
+							</div>
+						</div>
+						<hr>
+						<div class="number">
+							<p>999,666</p>
+						</div>
+						<div class="leftright1">
+							<div class="left3">
+								<p>总收入</p>
+							</div>						
+							<div class="right2">
+								<div class="total">
+									<p><i class="icon-money"></i></p>
+								</div>
+								<div class="number1">
+									<p>***</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="title1">
+						<div class="leftright1">
+							<div class="left2">
+								<p>活跃用户</p>
+							</div>						
+							<div class="right2">
+								<div class="time3">
+									<p>月</p>
+								</div>
+							</div>
+						</div>
+						<hr>
+						<div class="number">
+							<p>66,666</p>
+						</div>
+						<div class="leftright1">
+							<div class="left3">
+								<p>最近一个月</p>
+							</div>						
+							<div class="right2">
+								<div class="total">
+									<p><i class="icon-group"></i></p>
+								</div>
+								<div class="number1">
+									<p>15%</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>			
+			</div>
+			<footer>
+				<p> 南工院计算机与软件学园2019</p>
+			</footer>
+		</div>		
+		<button type="button" class="btn-up"><i class="icon-angle-up icon-2x"></i></button>
+	</body>
+</html>

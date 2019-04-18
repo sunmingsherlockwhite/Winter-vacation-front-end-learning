@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximun-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+		<title>响应式的Material Design</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			.row{
+				display: flex;
+				flex-wrap: wrap;
+			}
+			
+			[class*='col-']{
+				-webkit-box-flex: 1;
+				-webkit-flex: 1;
+				-ms-flex: 1;
+				flex: 1;
+			}
+			
+			/* 手机 */
+			@media only screen and (min-width : 320px) {
+				.col-xs-12{
+					flex: 0 0 100%;
+				}
+			}
+			
+			/* 平板 */
+			@media only screen and (min-width : 768px) {
+				.col-md-6{
+					flex: 0 0 50%;
+				}
+			}
+			
+			/* 中等屏幕 */
+			@media only screen and (min-width : 992px) {
+				.col-lg-4{
+					flex: 0 0 33.33%;
+				}
+			}
+			
+			/* 宽屏设备 */
+			@media only screen and (min-width : 1200px) {
+				.col-xl-3{
+					flex: 0 0 25%;
+				}
+			}
+			
+			/* 本例相关样式 */
+			/* 导航条 */
+			.nav-wrapper{
+				display: flex;
+				align-content: center;
+				justify-content: space-between;
+				height: 4rem;
+				background: url(img/背景.png);
+			}
+			
+			.brand-logo{
+				color: #FFF;
+				font-size: 2rem;
+				margin-left: 1rem;
+			}
+			
+			a{
+				text-decoration: none;
+			}
+			
+			#right-nav{
+				display: flex;
+			}
+			
+			#right-nav li{
+				list-style: none;
+				padding-right: 10px;
+			}
+			
+			#right-nav li a{
+				color: #FFF;
+			}
+			
+			#right-nav li a:hover{
+				text-decoration: underline;
+			}
+			
+			
+			.container{
+				width: 90%;
+				margin: 0.5rem auto;
+			}
+			
+			.card{
+				display: flex;
+				flex-direction: column;
+				background: #FFF;
+				border: 1px solid #EEE;
+				border-radius: .5rem;
+				margin-left: .3rem;
+				margin-right: .3rem;
+				margin-bottom: .3rem;
+			}
+			
+			.card-head{
+				height: 12rem;
+			}
+			
+			.card-head img{
+				width: 100%;
+				height: 100%;
+				/* 设置左上和右上圆矩形，正好和卡片吻合的效果 */
+				border-top-left-radius: .5rem;
+				border-top-right-radius: .5rem;
+			}
+			
+			.card-body{
+				text-align: center;
+			}
+			
+			.title{
+				margin-top: .75rem;
+				margin-bottom: .75rem;
+				font-size: 1.5rem;
+			}
+			
+			.sub-title{
+				color: aquamarine;
+				font-weight: 700;
+				margin-bottom: .75rem;
+				font-size: 1.1rem;
+			}
+			
+			.card-text{
+				color: #747373;
+				font-size: .9rem;
+				font-weight: 400;
+			}
+			
+			/* 几种主题配色 */
+			.greed-theme{
+				background: #008B8B;
+				color: #FFF;
+			}
+			
+			.red-theme{
+				background: #EE6E73;
+				color: #FFF;
+			}
+			
+			.purple-theme{
+				background: #AA66CC;
+				color: #FFF;
+			}
+			
+			.cyan-theme{
+				background: #00BCD4;
+				color: #FFF;
+			}
+			
+			/* 圆形按钮 */
+			.btn-floating{
+				/* 阴影效果，四个参数分别是：水平阴影位置、垂直阴影位置、阴影尺寸位置大小、阴影颜色 */
+				box-shadow: 2px 5px 10px #AAA;
+				width: 40px;
+				height: 40px;
+				margin: 10px;
+				border-radius: 50%;
+				padding: 0;
+				cursor: pointer;
+				border: none;
+			}
+			
+			/* 基础按钮 */
+			.btn-basic{
+				box-shadow: 2px 5px 10px #AAA;
+				width: 90px;
+				height: 40px;
+				margin: 10px;
+				border-radius: .3rem;
+				padding: 0;
+				cursor: pointer;
+				border: none;
+				font-size: 15px;
+			}
+			
+			/* 橘色渐变色按钮 */
+			.orange-gradient{
+				background: linear-gradient(40deg, #ffd86f, #fc6262);
+				color: #FFF;
+			}
+			
+			/* 红色渐变色按钮 */
+			.red-gradient{
+				/* 角度值指定渐变的方向，渐变的起止颜色 */
+				background: linear-gradient(40deg, #FFB6C1, #FF69B4);
+				color: #FFF;
+			}
+			
+			/* 绿色渐变色按钮 */
+			.greed-gradient{
+				background: linear-gradient(40deg, #AFEEEE, #008080);
+				color: #FFF;
+			}
+			
+			/* 卡片旋转样式 */
+			.card-transform{
+				margin-top: 3rem;
+				/* 顺时针旋转10度 */
+				transform: rotate(10deg);
+			}
+			
+			.icon-plus{
+				font-size: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<div class="nav-wrapper">
+				<a href="#" class="brand-logo">bilibili弹幕网</a>
+				<ul id="right-nav">
+					<li> <a href="#">个人中心</a></li>
+					<li> <a href="#">动态</a></li>
+					<li> <a href="#">设置</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-6 col-lg-4 col-xl-3">
+					<div class="card">
+						<div class="card-head">
+							<img src="img/我的头像.png" />
+						</div>
+						<div class="card-body">
+							<h4 class="title"><strong>NAME</strong></h4>
+							<h6 class="sub-title">备注</h6>
+							<p class="card-text">
+								bilibili作者
+								
+								</p>
+							<button type="button" class="btn-floating greed-theme">
+								<i class="icon-plus"></i>
+							</button>
+							<button type="button" class="btn-floating red-theme">
+								<i class="icon-plus"></i>
+							</button>
+						</div>
+					</div>					
+				</div>
+				<div class="col-xs-12 col-md-6 col-lg-4 col-xl-3">
+					<div class="card">
+						<div class="card-head">
+							<img src="img/我的头像.png" />
+						</div>
+						<div class="card-body">
+							<h4 class="title"><strong>NAME</strong></h4>
+							<h6 class="sub-title">备注</h6>
+							<p class="card-text">
+								bilibili作者
+								
+							</p>
+							<button type="button" class="btn-basic purple-theme">
+								必须关注
+							</button>
+							<button type="button" class="btn-basic cyan-theme">
+								不能不关注
+							</button>
+						</div>
+					</div>					
+				</div>
+				<div class="col-xs-12 col-md-6 col-lg-4 col-xl-3">
+					<div class="card">
+						<div class="card-head">
+							<img src="img/我的头像.png" />
+						</div>
+						<div class="card-body">
+							<h4 class="title"><strong>NAME</strong></h4>
+							<h6 class="sub-title">备注</h6>
+							<p class="card-text">
+								bilibili作者
+								
+							</p>
+							<button type="button" class="btn-basic orange-gradient">
+								必须关注
+							</button>
+							<button type="button" class="btn-basic red-gradient">
+								不能不关注
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-md-6 col-lg-4 col-xl-3">
+					<div class="card card-transform">
+						<div class="card-head">
+							<img src="img/我的头像.png" />
+						</div>
+						<div class="card-body">
+							<h4 class="title"><strong>NAME</strong></h4>
+							<h6 class="sub-title">备注</h6>
+							<p class="card-text">
+								bilibili作者
+								
+							</p>
+							<button type="button" class="btn-floating orange-gradient">
+								<i class="icon-plus"></i>
+							</button>
+							<button type="button" class="btn-floating greed-gradient">
+								<i class="icon-plus"></i>
+							</button>
+						
+						</div>
+					</div>
+				</div>
+			</div>
+		</div></div>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+body{
+	background: lightblue;
+}
+.avatar{
+	position: absolute;
+	top:10px;
+	right:10px;
+	border-radius: 100%;
+	width:80px;
+	height:80px;
+}
+.container{
+	position: absolute;
+	top:50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background: aquamarine;
+	border:1px solid aquamarine;
+	width:300px;
+	heigh:200px;
+	border-radius: 20px;
+	text-align: center;
+}
+.box{
+	position: absolute;
+	bottom: 10px;
+	right:10px;
+	border: 1px soild aqua;
+	width:200px;
+	heigh:100px;
+	background: lightgreen;
+}
+.title{
+	color:darkblue;
+}
